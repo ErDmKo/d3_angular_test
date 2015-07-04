@@ -1,0 +1,20 @@
+{
+  "name": "sovcombank_test_task",
+  "version": "1.0.0",
+  "description": "Sovcombank test task",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Sovcombank",
+    "test",
+    "task"
+  ],
+  "author": "Eroshenko Dmitriy",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp-karma": "0.0.4",
+    "karma": "^0.12.37"
+  }
+}
