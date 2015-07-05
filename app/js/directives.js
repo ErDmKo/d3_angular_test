@@ -78,7 +78,6 @@ var directiveModule = angular.module('edkChartInfo', [])
         template: '<div ng-transclude></div>',
         link: function(scope, element, attrs, controller) {
             element.on('click', function(){
-                element;
                 controller
                     .setDuration(scope.days || scope.month * 30 || 0);
             })
@@ -161,7 +160,7 @@ var directiveModule = angular.module('edkChartInfo', [])
 
 
             var insertData = function(data) {
-                var customTicks = data.length/10,
+                var customTicks = data.length/7,
                     addInfo = [];
                 
                 for (var i=customTicks; i<=data.length; i+=customTicks) {
@@ -185,14 +184,35 @@ var directiveModule = angular.module('edkChartInfo', [])
 
                 var hover_g = svg
                     .selectAll('.circles')
-                    .data(addInfo).enter()
+                    .data(addInfo)
+
+                hover_g.enter()
                     .append('svg:g')
                     .attr({
+                        'class': "circles",
                         transform: function(d) {
                             return 'translate('+xScale(d[0])+', 0)';
                         }
                     });
-                hover_g.append("svg:circle")
+                hover_g.exit().remove();
+                hover_g
+                    .selectAll('text')
+                    .remove()
+                hover_g
+                    .append('svg:text')
+                    .attr({
+                        transform: function(d) {
+                            return 'translate(-13, '+(yScale(d[1])-13)+')';
+                        }
+                    })
+                    .text(function(d){
+                        return d[1].toFixed(2);
+                    });
+                hover_g
+                    .selectAll('circle')
+                    .remove()
+                hover_g
+                    .append("svg:circle")
                     .attr({
                         cx: '1',
                         cy: function(d, i) {
@@ -208,7 +228,6 @@ var directiveModule = angular.module('edkChartInfo', [])
                     .y(function(d) {
                         return yScale(d[1]);
                     })
-                    .interpolate("monotone");
 
                 line
                       .data([data])

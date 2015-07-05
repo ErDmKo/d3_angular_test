@@ -17,3 +17,12 @@
     stroke: gray;
     stroke-width:2px;
 }
+.circles text {
+    paint-order: stroke;
+    stroke-opacity: .8;
+    stroke-width: 10px;
+    stroke: #fff;
+    stroke-linecap: butt;
+    fill: #000;
+    stroke-linejoin: miter;
+}
