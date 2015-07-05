@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>Sovcombank test task</title>
+    </head>
+    <body ng-app="chartsApp">
+       <div class="wrapper" ng-controller="charCtrl">
+           <h1>Hello Sovcombank </h1>
+            <chart-info source="">
+                <range-selector>
+                    <range data-days="7">
+                        Week
+                    </range>
+                    <range data-month="1">
+                        Month
+                    </range>
+                    <range data-month="3">
+                        Quarter
+                    </range>
+                    <range data-month="12">
+                        Year
+                    </range>
+                    <range>
+                        Max
+                    </range>
+                </range-selector>
+                <chart/>
+                <chart-selector>
+                    <type>
+                        Yield
+                    </type>
+                    <type>
+                        Spread
+                    </type>
+                    <type>
+                        Price
+                    </type>
+                </chart-selector>
+            </chart-info>
+        </div>
+    </body>
+</html>

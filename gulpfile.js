@@ -1,6 +1,6 @@
-var karma = require('gulp-karma');
-
-var testFiles = [];
+var karma = require('gulp-karma'),
+    gulp = require('gulp'),
+    testFiles = [];
 
 gulp.task('test', function() {
   return gulp.src(testFiles)
