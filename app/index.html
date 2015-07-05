@@ -1,11 +1,12 @@
 <html>
     <head>
         <title>Sovcombank test task</title>
+        <script src="build/lib/angular.min.js"></script>
     </head>
-    <body ng-app="chartsApp">
+    <body ng-app="edkChartApp">
        <div class="wrapper" ng-controller="charCtrl">
            <h1>Hello Sovcombank </h1>
-            <chart-info source="">
+            <chart-info source="charData">
                 <range-selector>
                     <range data-days="7">
                         Week
@@ -37,5 +38,6 @@
                 </chart-selector>
             </chart-info>
         </div>
+        <script src="build/all.js"></script>
     </body>
 </html>
