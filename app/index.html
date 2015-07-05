@@ -2,42 +2,45 @@
     <head>
         <title>Sovcombank test task</title>
         <script src="build/lib/angular.min.js"></script>
+        <link rel="stylesheet" href="build/lib/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/custom.css" />
     </head>
     <body ng-app="edkChartApp">
        <div class="wrapper" ng-controller="charCtrl">
            <h1>Hello Sovcombank </h1>
             <chart-info source="charData">
                 <range-selector>
-                    <range data-days="7">
+                    <range-item days="7">
                         Week
-                    </range>
-                    <range data-month="1">
+                    </range-item>
+                    <range-item month="1">
                         Month
-                    </range>
-                    <range data-month="3">
+                    </range-item>
+                    <range-item month="3">
                         Quarter
-                    </range>
-                    <range data-month="12">
+                    </range-item>
+                    <range-item month="12">
                         Year
-                    </range>
-                    <range>
+                    </range-item>
+                    <range-item>
                         Max
-                    </range>
+                    </range-item>
                 </range-selector>
-                <chart/>
-                <chart-selector>
-                    <type>
+                <chart-item/>
+                <select type-selector>
+                    <option value="0">
                         Yield
-                    </type>
-                    <type>
+                    </option>
+                    <option value="1">
                         Spread
-                    </type>
-                    <type>
+                    </option>
+                    <option value="2">
                         Price
-                    </type>
-                </chart-selector>
+                    </option>
+                </select
             </chart-info>
         </div>
+        <script src="build/lib/d3.min.js"></script>
         <script src="build/all.js"></script>
     </body>
 </html>

@@ -5,7 +5,10 @@ var karma = require('gulp-karma'),
     buildDir = 'app/build',
     libDir = buildDir + '/lib',
     libFiles = [
-        'node_modules/angular/angular.min.js'
+        'node_modules/angular/angular.min.js',  
+        'node_modules/d3/d3.min.js',
+        'node_modules/bootstrap/dist/js/bootstrap.min.js',
+        'node_modules/bootstrap/dist/css/bootstrap.min.css'
     ],
     sourceFiles = [
         'app/js/**/*.js',
@@ -13,6 +16,7 @@ var karma = require('gulp-karma'),
     ],
     testFiles = [
         'node_modules/angular/angular.js',
+        'node_modules/d3/d3.min.js',
         'node_modules/angular-mocks/angular-mocks.js',
         'app/js/*.js',
         'app/js/**/*.js',
