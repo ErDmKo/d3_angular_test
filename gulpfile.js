@@ -25,7 +25,7 @@ var karma = require('gulp-karma'),
     ];
 
 gulp.task('libs', function() {
-    return gulp.src(libFiles[0])
+    return gulp.src(libFiles)
         .pipe(gulp.dest(libDir))
 });
 gulp.task('javascript', function() {
