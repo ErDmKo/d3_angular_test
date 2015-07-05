@@ -1,0 +1,19 @@
+.background {
+    fill: #fdfdfd;
+}
+.domain {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 1px;
+}
+.tick line {
+    stroke: #ccc;
+    height: 100%;
+    fill: black;
+    width: 10px;
+}
+.line {
+    fill: none;
+    stroke: gray;
+    stroke-width:2px;
+}

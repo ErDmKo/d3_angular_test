@@ -10,6 +10,7 @@ var chartModule = angular.module('edkChartApp', [
             var min = -1,
                 max = 1,
                 prev_val = prev[prev.length-1] || [0, 0, 0, 0];
+                dateMargin = 10000;
 
             prev.push([
                 dateCounter,
@@ -17,7 +18,7 @@ var chartModule = angular.module('edkChartApp', [
                 +prev_val[2] + Math.random() * (max - min) + min,
                 +prev_val[3] + Math.random() * (max - min) + min
             ]);
-            dateCounter += timeStep;
+            dateCounter += timeStep + Math.random() * (max*dateMargin - min*dateMargin) + min*dateMargin;
             return prev;
         }, []);
 });

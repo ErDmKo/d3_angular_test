@@ -6,28 +6,28 @@
         <link rel="stylesheet" href="css/custom.css" />
     </head>
     <body ng-app="edkChartApp">
-       <div class="wrapper" ng-controller="charCtrl">
+       <div class="wrapper container" ng-controller="charCtrl">
            <h1>Hello Sovcombank </h1>
             <chart-info source="charData">
-                <range-selector>
-                    <range-item days="7">
+                <div class="btn-group" range-selector>
+                    <range-item class="btn btn-default" days="7">
                         Week
                     </range-item>
-                    <range-item month="1">
+                    <range-item class="btn btn-default" month="1">
                         Month
                     </range-item>
-                    <range-item month="3">
+                    <range-item class="btn btn-default" month="3">
                         Quarter
                     </range-item>
-                    <range-item month="12">
+                    <range-item class="btn btn-default" month="12">
                         Year
                     </range-item>
-                    <range-item>
+                    <range-item class="btn btn-default">
                         Max
                     </range-item>
-                </range-selector>
-                <chart-item/>
-                <select type-selector>
+                </div>
+                <chart-item></chart-item>
+                <select class="form-control" type-selector>
                     <option value="0">
                         Yield
                     </option>
@@ -37,7 +37,7 @@
                     <option value="2">
                         Price
                     </option>
-                </select
+                </select>
             </chart-info>
         </div>
         <script src="build/lib/d3.min.js"></script>
