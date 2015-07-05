@@ -161,6 +161,16 @@ var directiveModule = angular.module('edkChartInfo', [])
 
 
             var insertData = function(data) {
+                var customTicks = data.length/10,
+                    addInfo = [];
+                
+                for (var i=customTicks; i<=data.length; i+=customTicks) {
+                    var val = data[Math.ceil(i)];
+                    if (val) {
+                        addInfo.push(val);
+                    }
+                }
+
                 var xScale = d3.time.scale()
                     .range([0, width])
                     .domain(d3.extent(data.map(function(d) {
@@ -172,6 +182,24 @@ var directiveModule = angular.module('edkChartInfo', [])
                     .domain(d3.extent(data.map(function(d) {
                         return d[1];
                     })));
+
+                var hover_g = svg
+                    .selectAll('.circles')
+                    .data(addInfo).enter()
+                    .append('svg:g')
+                    .attr({
+                        transform: function(d) {
+                            return 'translate('+xScale(d[0])+', 0)';
+                        }
+                    });
+                hover_g.append("svg:circle")
+                    .attr({
+                        cx: '1',
+                        cy: function(d, i) {
+                            return yScale(d[1]);
+                        },
+                        r: 3
+                    })
 
                 var line_function = d3.svg.line()
                     .x(function(d) {
