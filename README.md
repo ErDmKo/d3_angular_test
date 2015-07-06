@@ -1,1 +1,1 @@
-# My test task for sovkombank
+# d3 angular test
